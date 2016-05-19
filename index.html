@@ -1,0 +1,25 @@
+<html>
+     <head>     
+         <script type="text/javascript" src="vue.js"></script>
+         <script type="text/javascript" src="Hanoi.js"></script>
+         <link rel=stylesheet type="text/css" href="hanoi.css">  
+         <meta charset="utf-8">
+     </head>
+<body>
+<div id="app">
+<div id="stat">
+    ходы: {{counter}}
+</div>
+    <div id="game-container">
+        <div class="fields">
+            <div class="field" id="field1" v-on:click="ringMove" > 
+                 <div class="ring" v-for="ring in rings" id={{ring.id}}>
+                </div>  
+            </div>
+            <div class="field" id="field2"  v-on:click="ringMove"  ></div>
+            <div class="field" id="field3" v-on:click="ringMove" ></div>
+        </div>
+    </div>
+    <p class="help">Нужно переместить пирамиду по очереди на каждый их свободных столбиков, путем нажатия на поле, с которого нужно переместить, потом на поле, на которое перемещаем кольцо. Нельзя положить кольцо большего диаметра на меньший.</p>
+    </div>
+</body>
